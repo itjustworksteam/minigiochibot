@@ -1,0 +1,6 @@
+os: ubuntu14
+language: php
+script:
+   - composer self-update -n
+   - composer install
+   - ./vendor/bin/phpunit test/
