@@ -7,4 +7,4 @@ php:
 script:
   - composer self-update -n
   - composer install
-  - /vendor/bin/phpunit test
+  - ./vendor/bin/phpunit test/
