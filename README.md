@@ -2,6 +2,8 @@
 
 A simple Telegram bot written in PHP.
 
+[![Build Status](https://travis-ci.org/itjustworksteam/minigiochibot.svg?branch=master)](https://travis-ci.org/itjustworksteam/minigiochibot)
+
 ## GETTING STARTED ##
 
 On Telegram:
