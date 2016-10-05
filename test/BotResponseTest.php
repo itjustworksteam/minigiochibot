@@ -8,48 +8,49 @@
 
 		public function testStartReply() {
 			$response = new BotResponse();
-			$this->assertEquals("Benvenuto nel bot 'Mini Giochi'!\n\nQuesto bot contiene dei mini giochi per passare il tempo\nAltri giochi verrano aggunti nel corso del tempo\n\nGiochi disponibili:\n- carta forbice sasso", $response->reply("/start"));
+			$this->assertEquals("Welcome to 'Mini Giochi' bot!\n\nWith this bot you can play rock-paper-scissors. For more /help.", $response->reply("/start"));
 		}
 
 		public function testAvviaReply() {
 			$response = new BotResponse();
-			$this->assertEquals("Benvenuto nel bot 'Mini Giochi'!\n\nQuesto bot contiene dei mini giochi per passare il tempo\nAltri giochi verrano aggunti nel corso del tempo\n\nGiochi disponibili:\n- carta forbice sasso", $response->reply("/start start"));
+			$this->assertEquals("Welcome to 'Mini Giochi' bot!\n\nWith this bot you can play rock-paper-scissors. For more /help.", $response->reply("/start start"));
 		}
 
 		public function testAiutoReply() {
 			$response = new BotResponse();
-			$this->assertEquals("Con questo bot puoi giocare tranquillamente a carta forbice sasso\nCol tempo verranno aggiunti altri nuovi giochi", $response->reply("/aiuto"));
-			$this->assertEquals("Con questo bot puoi giocare tranquillamente a carta forbice sasso\nCol tempo verranno aggiunti altri nuovi giochi", $response->reply("AIUTO"));
+			$this->assertEquals("Simple rules:\nrock beats scissors\nscissiors beats paper\npaper beats rock", $response->reply("/help"));
+			$this->assertEquals("Simple rules:\nrock beats scissors\nscissiors beats paper\npaper beats rock", $response->reply("HELP"));
+			// Simple rules:\nrock beats scissors\nscissiors beats paper\npaper beats rock.
 		}
 
 		public function testCreditsReply() {
 			$response = new BotResponse();
-			$this->assertEquals("Realizzato da 'It Just Works'.\nScopri di più su www.itjustworks.it\no metti 'Mi piace' sulla nostra pagina facebook https://www.facebook.com/itjustworksteam", $response->reply("/credits"));
-			$this->assertEquals("Realizzato da 'It Just Works'.\nScopri di più su www.itjustworks.it\no metti 'Mi piace' sulla nostra pagina facebook https://www.facebook.com/itjustworksteam", $response->reply("CREDITS"));
+			$this->assertEquals("Developed by 'It Just Works'. For more please visit www.itjustworks.it", $response->reply("/credits"));
+			$this->assertEquals("Developed by 'It Just Works'. For more please visit www.itjustworks.it", $response->reply("CREDITS"));
 		}
 
 		public function testCartaReply() {
 			$response = new BotResponse();
-			$this->assertNotEquals("", $response->reply("CARTA"));
-			$this->assertNotEquals("", $response->reply("CARTA", "carta"));
-			$this->assertNotEquals("", $response->reply("CARTA", "forbice"));
-			$this->assertNotEquals("", $response->reply("CARTA", "sasso"));
+			$this->assertNotEquals("", $response->reply("PAPER"));
+			$this->assertNotEquals("", $response->reply("PAPER", "paper"));
+			$this->assertNotEquals("", $response->reply("PAPER", "scissors"));
+			$this->assertNotEquals("", $response->reply("PAPER", "rock"));
 		}
 
 		public function testSassoReply() {
 			$response = new BotResponse();
-			$this->assertNotEquals("", $response->reply("SASSO"));
-			$this->assertNotEquals("", $response->reply("SASSO", "carta"));
-			$this->assertNotEquals("", $response->reply("SASSO", "forbice"));
-			$this->assertNotEquals("", $response->reply("SASSO", "sasso"));
+			$this->assertNotEquals("", $response->reply("ROCK"));
+			$this->assertNotEquals("", $response->reply("ROCK", "paper"));
+			$this->assertNotEquals("", $response->reply("ROCK", "scissors"));
+			$this->assertNotEquals("", $response->reply("ROCK", "rock"));
 		}
 
 		public function testForbiceReply() {
 			$response = new BotResponse();
-			$this->assertNotEquals("", $response->reply("FORBICE"));
-			$this->assertNotEquals("", $response->reply("FORBICE", "carta"));
-			$this->assertNotEquals("", $response->reply("FORBICE", "forbice"));
-			$this->assertNotEquals("", $response->reply("FORBICE", "sasso"));
+			$this->assertNotEquals("", $response->reply("SCISSORS"));
+			$this->assertNotEquals("", $response->reply("SCISSORS", "paper"));
+			$this->assertNotEquals("", $response->reply("SCISSORS", "scissors"));
+			$this->assertNotEquals("", $response->reply("SCISSORS", "rock"));
 		}
 	}
 

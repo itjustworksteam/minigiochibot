@@ -1,6 +1,6 @@
 # MINIGIOCHI BOT #
 
-A simple Telegram bot written in PHP.
+A simple Telegram bot written in PHP where you can play Rock-paper-scissors.
 
 [![Build Status](https://travis-ci.org/itjustworksteam/minigiochibot.svg?branch=master)](https://travis-ci.org/itjustworksteam/minigiochibot)
 

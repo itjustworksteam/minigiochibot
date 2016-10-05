@@ -8,13 +8,13 @@
 
 			if($text == "/start" || $text == "/start start"){
 
-				$response = "Benvenuto nel bot 'Mini Giochi'!\n\nQuesto bot contiene dei mini giochi per passare il tempo\nAltri giochi verrano aggunti nel corso del tempo\n\nGiochi disponibili:\n- carta forbice sasso";
-			} else if($text == "/aiuto" || $text == "AIUTO") {
-				$response = "Con questo bot puoi giocare tranquillamente a carta forbice sasso\nCol tempo verranno aggiunti altri nuovi giochi";
+				$response = "Welcome to 'Mini Giochi' bot!\n\nWith this bot you can play rock-paper-scissors. For more /help.";
+			} else if($text == "/help" || $text == "HELP") {
+				$response = "Simple rules:\nrock beats scissors\nscissiors beats paper\npaper beats rock";
 			} else if($text == "/credits" || $text == "CREDITS"){
-				$response = "Realizzato da 'It Just Works'.\nScopri di più su www.itjustworks.it\no metti 'Mi piace' sulla nostra pagina facebook https://www.facebook.com/itjustworksteam";
+				$response = "Developed by 'It Just Works'. For more please visit www.itjustworks.it";
 			} else {
-				$symbols = array("carta", "forbice", "sasso");
+				$symbols = array("paper", "scissors", "rock");
 				$computerchoise = "";
 				if($choise == null) {
 					$choise = mt_rand(0, 2);
@@ -23,35 +23,35 @@
 					$computerchoise = $choise;
 				}
 		        $humanchoise = strtolower($text);
-		        $response = "Tu hai scelto: ".$humanchoise."\n\n";
-		        $response .= "Il computer ha scelto: ".$computerchoise."\n\n";
+		        $response = "Your choise: ".$humanchoise."\n\n";
+		        $response .= "Computer choise: ".$computerchoise."\n\n";
 		        if($computerchoise === $humanchoise)
 		        {
-		            $response .= "Risultato: Pareggio!\n";
+		            $response .= "Result: Draw!\n";
 		        }
-		        else if($humanchoise === "carta" && $computerchoise === "forbice")
+		        else if($humanchoise === "paper" && $computerchoise === "scissors")
 		        {
-		            $response .= "Risulutato: Hai Perso!\n";
+		            $response .= "Result: You lost!\n";
 		        }
-		        else if($humanchoise === "carta" && $computerchoise === "sasso")
+		        else if($humanchoise === "paper" && $computerchoise === "rock")
 		        {
-		            $response .= "Risultato: Hai Vinto!\n";
+		            $response .= "Result: You win!\n";
 		        }
-		        else if($humanchoise === "forbice" && $computerchoise === "carta")
+		        else if($humanchoise === "scissors" && $computerchoise === "paper")
 		        {
-		            $response .= "Risultato: Hai Vinto!\n";
+		            $response .= "Result: You win!\n";
 		        }
-		        else if($humanchoise === "forbice" && $computerchoise === "sasso")
+		        else if($humanchoise === "scissors" && $computerchoise === "rock")
 		        {
-		            $response .= "Risultato: Hai Perso!\n";
+		            $response .= "Result: You lost!\n";
 		        }
-		        else if($humanchoise === "sasso" && $computerchoise === "carta")
+		        else if($humanchoise === "rock" && $computerchoise === "paper")
 		        {
-		            $response .= "Risultato: Hai Perso!\n";
+		            $response .= "Result: You Lost!\n";
 		        }
-		        else if($humanchoise === "sasso" && $computerchoise === "forbice")
+		        else if($humanchoise === "rock" && $computerchoise === "scissors")
 		        {
-		            $response .= "Risultato: Hai Vinto!\n";
+		            $response .= "Result: You win!\n";
 		        }
 		    }
 			return $response;
