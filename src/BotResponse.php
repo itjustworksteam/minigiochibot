@@ -13,6 +13,8 @@
 				$response = "Simple rules:\nrock beats scissors\nscissiors beats paper\npaper beats rock";
 			} else if($text == "/credits" || $text == "CREDITS"){
 				$response = "Developed by 'It Just Works'. For more please visit www.itjustworks.it";
+			} else if($text == "/feedback" || $text == "FEEDBACK") {
+				$response = "If you have a question or you need an help. Please use our support bot: @itjustworksbot. We will reply you as soon as possible!";
 			} else {
 				$symbols = array("paper", "scissors", "rock");
 				$computerchoise = "";

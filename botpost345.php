@@ -13,7 +13,7 @@
     send($telegram, $chat_id, $response);
 
     function send($telegram, $chat_id, $response){
-        $option = array(array("PAPER","SCISSORS", "ROCK"), array("CREDITS", "HELP"));
+        $option = array(array("PAPER","SCISSORS", "ROCK"), array("CREDITS", "HELP", "FEEDBACK"));
         $keyb = $telegram->buildKeyBoard($option, $onetime=FALSE);
         $content = array('chat_id' => $chat_id, 'reply_markup' => $keyb, 'text' => $response);
         $telegram->sendMessage($content);

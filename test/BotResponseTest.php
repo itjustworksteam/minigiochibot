@@ -52,6 +52,13 @@
 			$this->assertNotEquals("", $response->reply("SCISSORS", "scissors"));
 			$this->assertNotEquals("", $response->reply("SCISSORS", "rock"));
 		}
+
+		public function testFeedbackResponse() {
+			$response = new BotResponse();
+			$this->assertEquals("If you have a question or you need an help. Please use our support bot: @itjustworksbot. We will reply you as soon as possible!", $response->reply("/feedback"));
+			$this->assertEquals("If you have a question or you need an help. Please use our support bot: @itjustworksbot. We will reply you as soon as possible!", $response->reply("FEEDBACK"));
+
+		}
 	}
 
 ?>
